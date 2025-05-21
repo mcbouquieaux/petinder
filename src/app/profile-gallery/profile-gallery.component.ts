@@ -3,16 +3,19 @@ import {PetService} from '../service/pet.service';
 import {Pet} from '../../../model/Pet';
 import {AsyncPipe} from '@angular/common';
 import {map, Observable} from 'rxjs';
+import {FormsModule} from '@angular/forms';
+import {NameFilterPipe} from '../name-filter.pipe';
 
 @Component({
   selector: 'app-profile-gallery',
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, FormsModule, NameFilterPipe],
   templateUrl: './profile-gallery.component.html',
   styleUrl: './profile-gallery.component.css'
 })
 export class ProfileGalleryComponent implements OnInit {
    pets$!: Observable<Pet[]>;
    selectedPet: Pet;
+   searchText: string;
 
   constructor(private service: PetService) {
 
@@ -30,5 +33,5 @@ export class ProfileGalleryComponent implements OnInit {
 
   selectPet(pet: Pet): Pet{
     return this.selectedPet= pet
-}
+  }
 }
