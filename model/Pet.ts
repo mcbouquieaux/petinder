@@ -1,9 +1,10 @@
 export interface Pet{
   id: number;
-  name: String;
-  kind: String;
-  image: String;
-  profileText: String;
+  name: string;
+  kind: string;
+  image: string;
+  profileText: string;
   popularity: number;
+
 
 }

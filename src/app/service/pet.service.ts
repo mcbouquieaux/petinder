@@ -7,12 +7,12 @@ import {backendUrl} from '../../environments/environment';
   providedIn: 'root'
 })
 export class PetService {
-  private url: String;
-  constructor(private http: HttpClient) {
+  private url: string;
+  constructor(private httpClient: HttpClient) {
     this.url= backendUrl
   }
 
   getPets(): Observable<any>{
-    return this.http.get(this.url)
+    return this.httpClient.get(this.url)
   }
 }
