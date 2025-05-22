@@ -12,7 +12,6 @@ export class FooterComponent {
   constructor() {
     let dateobj = new Date()
     this._year = dateobj.getFullYear();
-    //this._year = 2025;
   }
 
   get year(): number {
